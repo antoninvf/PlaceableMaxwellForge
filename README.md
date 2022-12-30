@@ -14,4 +14,4 @@ This is the more up to date version of Maxwell the placeable cat.
 * bean(alwayshasbean) - [Dingus/Maxwell Cat model](https://sketchfab.com/3d-models/dingus-the-cat-2ca7f3c1957847d6a145fc35de9046b0)
 * [Maxwell the carryable cat](https://steamcommunity.com/sharedfiles/filedetails/?id=2878054450) - Where the idea came from
 
-**This is a FORGE mod**<br>[Here is an out of date Fabric version](https://github.com/antoninvf/fabricMaxwellPlaceableCat)
+**Also this is a FORGE mod**<br>[Here is an out of date Fabric version](https://github.com/antoninvf/fabricMaxwellPlaceableCat)
