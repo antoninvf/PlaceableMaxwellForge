@@ -5,7 +5,7 @@
   "textures": {
     "dingus": "placeablemaxwell:block/maxwell",
     "whiskers": "placeablemaxwell:block/whiskers",
-    "particle": "placeablemaxwell:block/maxwell"
+    "particle": "minecraft:block/black_wool"
   },
   "render_type": "cutout",
   "display": {
