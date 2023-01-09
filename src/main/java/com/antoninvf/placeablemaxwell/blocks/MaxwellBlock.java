@@ -3,11 +3,15 @@ package com.antoninvf.placeablemaxwell.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -47,6 +51,24 @@ public class MaxwellBlock extends FallingBlock {
         }
 
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public void onLand(Level world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
+        if (!world.isClientSide()) {
+            world.playSound(null, pos, SoundEvents.CAT_AMBIENT, SoundSource.BLOCKS, 1, new Random().nextFloat() * (1.2f - 0.8f) + 0.8f);
+        }
+    }
+
+    @Override
+    public DamageSource getFallDamageSource() {
+        return new DamageSource("falling_maxwell_cat") {
+            @Override
+            public Component getLocalizedDeathMessage(LivingEntity p_19343_) {
+                LivingEntity livingentity = p_19343_.getKillCredit();
+                return Component.translatable("death.placeablemaxwell.falling_maxwell_cat", livingentity.getDisplayName());
+            }
+        }.setIsFall();
     }
 
     // adds all the block state properties you want to use
