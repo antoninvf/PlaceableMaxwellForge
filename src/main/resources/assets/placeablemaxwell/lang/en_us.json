@@ -2,5 +2,6 @@
   "itemGroup.placeablemaxwell": "Maxwell the placeable cat",
 
   "block.placeablemaxwell.maxwell": "Maxwell",
-  "death.placeablemaxwell.falling_maxwell_cat": "1$s was squashed by a falling Maxwell cat"
+  "death.attack.placeablemaxwell.falling_maxwell_cat": "%1$s was squashed by a falling Maxwell cat",
+  "death.attack.placeablemaxwell.falling_maxwell_cat.player": "%1$s was squashed by a falling Maxwell cat whilst fighting %2$s"
 }
