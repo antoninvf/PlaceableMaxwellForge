@@ -1,9 +1,9 @@
 {
   "loader": "forge:obj",
-  "flip_v": true,
-  "model": "placeablemaxwell:models/block/maxwell.obj",
+  "flip_v": false,
+  "model": "placeablemaxwell:models/block/vasilisa.obj",
   "textures": {
-    "dingus": "placeablemaxwell:block/vasilisa",
+    "maxwell": "placeablemaxwell:block/vasilisa",
     "whiskers": "placeablemaxwell:block/whiskers",
     "particle": "minecraft:block/gray_wool"
   },

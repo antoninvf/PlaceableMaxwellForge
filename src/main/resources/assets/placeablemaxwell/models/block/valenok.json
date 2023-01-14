@@ -1,10 +1,10 @@
 {
   "loader": "forge:obj",
-  "flip_v": true,
-  "model": "placeablemaxwell:models/block/maxwell.obj",
+  "flip_v": false,
+  "model": "placeablemaxwell:models/block/valenok.obj",
   "textures": {
-    "dingus": "placeablemaxwell:block/valenok",
-    "whiskers": "placeablemaxwell:block/valenok_whiskers",
+    "maxwell": "placeablemaxwell:block/valenok",
+    "whiskers": "placeablemaxwell:block/whiskers",
     "particle": "minecraft:block/white_wool"
   },
   "render_type": "cutout",

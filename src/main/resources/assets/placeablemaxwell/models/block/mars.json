@@ -1,9 +1,9 @@
 {
   "loader": "forge:obj",
-  "flip_v": true,
-  "model": "placeablemaxwell:models/block/maxwell.obj",
+  "flip_v": false,
+  "model": "placeablemaxwell:models/block/mars.obj",
   "textures": {
-    "dingus": "placeablemaxwell:block/mars",
+    "maxwell": "placeablemaxwell:block/mars",
     "whiskers": "placeablemaxwell:block/whiskers",
     "particle": "minecraft:block/light_gray_wool"
   },

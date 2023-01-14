@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F F",
+    "BBB",
+    "BWB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:black_wool"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "F": {
+      "tag": "minecraft:fishes"
+    }
+  },
+  "result": {
+    "item": "placeablemaxwell:maxwell",
+    "count": 1
+  }
+}
