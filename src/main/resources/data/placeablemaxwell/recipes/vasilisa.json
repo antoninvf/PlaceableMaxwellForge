@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F F",
+    "GWG",
+    "GGG"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "G": {
+      "item": "minecraft:gray_wool"
+    },
+    "F": {
+      "tag": "minecraft:fishes"
+    }
+  },
+  "result": {
+    "item": "placeablemaxwell:valenok",
+    "count": 1
+  }
+}
