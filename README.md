@@ -1,6 +1,6 @@
 # Maxwell the placeable cat
 
-A forge mod that adds Maxwell the cat to Minecraft.
+A forge mod that adds Maxwell the cat to Minecraft and other cats too.
 
 I made this cause I was bored and didn't know what to make :D
 
@@ -16,5 +16,6 @@ This is the more up to date version of Maxwell the placeable cat.
 * [Forge Community Wiki](https://forge.gemwire.uk/)
 * [Forge](https://files.minecraftforge.net/)
 * [Maxwell the carryable cat](https://steamcommunity.com/sharedfiles/filedetails/?id=2878054450) - Where the idea came from
+* [MORE carryable cat !](https://steamcommunity.com/sharedfiles/filedetails/?id=2885380609) - Where I got the other cats from
 
 **This is a FORGE mod**<br>[Here is an archived out of date Fabric version](https://github.com/antoninvf/fabricMaxwellPlaceableCat)
