@@ -29,6 +29,27 @@ public class BlockInit {
                     .noOcclusion())
     );
 
+    public static final RegistryObject<Block> MARS_BLOCK = BLOCKS.register("mars",
+            () -> new MaxwellBlock(BlockBehaviour.Properties.of(Material.WOOL)
+                    .strength(0.8f)
+                    .sound(SoundType.WOOL)
+                    .noOcclusion())
+    );
+
+    public static final RegistryObject<Block> VALENOK_BLOCK = BLOCKS.register("valenok",
+            () -> new MaxwellBlock(BlockBehaviour.Properties.of(Material.WOOL)
+                    .strength(0.8f)
+                    .sound(SoundType.WOOL)
+                    .noOcclusion())
+    );
+
+    public static final RegistryObject<Block> VASILISA_BLOCK = BLOCKS.register("vasilisa",
+            () -> new MaxwellBlock(BlockBehaviour.Properties.of(Material.WOOL)
+                    .strength(0.8f)
+                    .sound(SoundType.WOOL)
+                    .noOcclusion())
+    );
+
     // Automatically create items for blocks
     @SubscribeEvent
     public static void onRegisterItems(final RegisterEvent event) {
