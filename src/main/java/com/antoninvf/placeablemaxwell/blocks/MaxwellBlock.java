@@ -1,20 +1,16 @@
 package com.antoninvf.placeablemaxwell.blocks;
 
+import com.antoninvf.placeablemaxwell.PlaceableMaxwell;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -24,7 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.Tags;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -45,10 +41,10 @@ public class MaxwellBlock extends FallingBlock {
         }
 
         // if player is holding any type of fish
-        if (player.getItemInHand(hand).is(ItemTags.FISHES)) {
+       /*if (player.getItemInHand(hand).is(ItemTags.FISHES)) {
             world.destroyBlock(pos, true);
             return InteractionResult.CONSUME;
-        }
+        }*/
 
         return InteractionResult.SUCCESS;
     }
@@ -61,14 +57,14 @@ public class MaxwellBlock extends FallingBlock {
     }
 
     @Override
-    public DamageSource getFallDamageSource() {
-        return new DamageSource("falling_maxwell_cat") {
-            @Override
-            public Component getLocalizedDeathMessage(LivingEntity p_19343_) {
-                LivingEntity livingentity = p_19343_.getKillCredit();
-                return Component.translatable("death.placeablemaxwell.falling_maxwell_cat", livingentity.getDisplayName());
-            }
-        }.setIsFall();
+    public @NotNull DamageSource getFallDamageSource() {
+        return new DamageSource(PlaceableMaxwell.MOD_ID + ".falling_maxwell_cat").damageHelmet();
+    }
+
+    // Does 20 damage to the player when Maxwell falls on them
+    @Override
+    protected void falling(FallingBlockEntity fallingBlockEntity) {
+        fallingBlockEntity.setHurtsEntities(20,20);
     }
 
     // adds all the block state properties you want to use
