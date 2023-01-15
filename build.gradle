@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '1.2'
+version = '1.2.2'
 group = 'com.antoninvf.placeablemaxwell' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'placeablemaxwell'
 
