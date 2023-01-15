@@ -8,11 +8,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
+import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
@@ -52,17 +53,16 @@ public class BlockInit {
 
     // Automatically create items for blocks
     @SubscribeEvent
-    public static void onRegisterItems(final RegisterEvent event) {
-        if (event.getRegistryKey().equals(ForgeRegistries.Keys.ITEMS)) {
-            BLOCKS.getEntries().forEach( (blockRegistryObject -> {
-                Block block = blockRegistryObject.get();
+    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
+        final IForgeRegistry<Item> registry = event.getRegistry();
 
-                Item.Properties properties = new Item.Properties().tab(ItemInit.ModCreativeTab.instance);
+        BLOCKS.getEntries().stream().map(RegistryObject::get).forEach( (block) -> {
+            final Item.Properties properties = new Item.Properties().tab(ItemInit.ModCreativeTab.instance);
 
-                Supplier<Item> blockItemFactory = () -> new BlockItem(block, properties);
+            final BlockItem blockItem = new BlockItem(block, properties);
 
-                event.register(ForgeRegistries.Keys.ITEMS, blockRegistryObject.getId(), blockItemFactory);
-            }));
-        }
+            blockItem.setRegistryName(block.getRegistryName());
+            registry.register(blockItem);
+        });
     }
 }
