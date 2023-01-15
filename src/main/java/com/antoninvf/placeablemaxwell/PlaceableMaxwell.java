@@ -33,6 +33,11 @@ public class PlaceableMaxwell
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.MAXWELL_BLOCK.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.MARS_BLOCK.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.VALENOK_BLOCK.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.VASILISA_BLOCK.get(), RenderType.cutout());
+
         LOGGER.info("Maxwell says meow!");
     }
 }
