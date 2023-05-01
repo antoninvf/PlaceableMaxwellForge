@@ -6,8 +6,8 @@ I made this cause I was bored and didn't know what to make :D
 
 This is the more up to date version of Maxwell the placeable cat.
 
-* [Curseforge page](https://www.curseforge.com/minecraft/mc-mods/maxwell-the-placeable-cat)
 * [Modrinth page](https://modrinth.com/mod/maxwell-the-placeable-cat)
+* [Curseforge page](https://www.curseforge.com/minecraft/mc-mods/maxwell-the-placeable-cat)
 
 ## Credits
 
