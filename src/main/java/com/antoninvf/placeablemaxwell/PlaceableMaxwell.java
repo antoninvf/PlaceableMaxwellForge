@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -23,6 +24,7 @@ public class PlaceableMaxwell
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
 
         BlockInit.BLOCKS.register(modEventBus);
         ItemInit.ITEMS.register(modEventBus);
@@ -33,11 +35,14 @@ public class PlaceableMaxwell
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        LOGGER.info("Maxwell says meow!");
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event)
+    {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.MAXWELL_BLOCK.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.MARS_BLOCK.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.VALENOK_BLOCK.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.VASILISA_BLOCK.get(), RenderType.cutout());
-
-        LOGGER.info("Maxwell says meow!");
     }
 }
