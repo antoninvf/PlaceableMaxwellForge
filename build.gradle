@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.antoninvf.placeablemaxwell'
-version = '1.2.2'
+version = '1.2.3'
 
 java {
     archivesBaseName = 'placeablemaxwell'
