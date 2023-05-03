@@ -17,5 +17,6 @@ This is the more up to date version of Maxwell the placeable cat.
 * [Forge](https://files.minecraftforge.net/)
 * [Maxwell the carryable cat](https://steamcommunity.com/sharedfiles/filedetails/?id=2878054450) - Where the idea came from
 * [MORE carryable cat !](https://steamcommunity.com/sharedfiles/filedetails/?id=2885380609) - Where I got the other cats from
+* [unilock](https://github.com/unilock) fixing a bug :D
 
 **This is a FORGE mod**<br>[Here is an archived out of date Fabric version](https://github.com/antoninvf/fabricMaxwellPlaceableCat)
