@@ -1,17 +1,26 @@
-package com.antoninvf.placeablemaxwell.blocks;
+package dev.flwn.placeablemaxwell.block.custom;
 
-import com.antoninvf.placeablemaxwell.PlaceableMaxwell;
+import dev.flwn.placeablemaxwell.PlaceableMaxwell;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
@@ -20,14 +29,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Random;
+
 
 public class MaxwellBlock extends FallingBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public MaxwellBlock(Block.Properties properties) {
+    public MaxwellBlock(Properties properties) {
         super(properties);
 
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -55,16 +66,18 @@ public class MaxwellBlock extends FallingBlock {
             world.playSound(null, pos, SoundEvents.CAT_AMBIENT, SoundSource.BLOCKS, 1, new Random().nextFloat() * (1.2f - 0.8f) + 0.8f);
         }
     }
-
+    
+    // temp fix
+    
     @Override
-    public @NotNull DamageSource getFallDamageSource() {
-        return new DamageSource(PlaceableMaxwell.MOD_ID + ".falling_maxwell_cat").damageHelmet();
+    public DamageSource getFallDamageSource(Entity pEntity) {
+        return pEntity.damageSources().fallingBlock(pEntity);
     }
 
     // Does 20 damage to the player when Maxwell falls on them
     @Override
     protected void falling(FallingBlockEntity fallingBlockEntity) {
-        fallingBlockEntity.setHurtsEntities(20,20);
+        fallingBlockEntity.setHurtsEntities(1,20);
     }
 
     // adds all the block state properties you want to use
