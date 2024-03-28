@@ -1,6 +1,5 @@
 {
-  "creativetab.placeablemaxwell_tab": "Maxwell the placeable cat",
-
+  "itemGroup.placeablemaxwellGroup": "Maxwell the placeable cat",
   "block.placeablemaxwell.maxwell": "Maxwell",
   "block.placeablemaxwell.mars": "Mars",
   "block.placeablemaxwell.valenok": "Valenok",
