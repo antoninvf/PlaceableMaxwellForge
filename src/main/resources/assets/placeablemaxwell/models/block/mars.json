@@ -7,6 +7,7 @@
     "whiskers": "placeablemaxwell:block/whiskers",
     "particle": "minecraft:block/light_gray_wool"
   },
+  "ambientocclusion": false,
   "render_type": "cutout",
   "display": {
     "thirdperson_righthand": {
